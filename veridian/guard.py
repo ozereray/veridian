@@ -29,6 +29,8 @@ def guard(
             logger.error(f"'{func.__name__}' exhausted all {max_retries} retries.")
             if fallback is not None:
                 return fallback
-            raise last_exc
+            if last_exc is not None:
+                raise last_exc
+            raise RuntimeError("Execution failed without raising an exception.")
         return wrapper
     return decorator
