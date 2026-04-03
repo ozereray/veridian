@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veridian"
+version = "0.1.0"
+description = "Lightweight guard layer for AI agents — retry, catch, log."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/KULLANICI_ADIN/veridian"
+
+[tool.setuptools.packages.find]
+include = ["veridian*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
