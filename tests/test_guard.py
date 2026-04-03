@@ -34,3 +34,27 @@ def test_guard_fallback():
         raise ValueError("err")
 
     assert always_fails() == "default"
+
+@pytest.mark.asyncio
+async def test_guard_async_success():
+    """Async fonksiyonların başarıyla çalışması ve beklenmesi."""
+    @guard(max_retries=2, delay=0.1)
+    async def async_works():
+        import asyncio
+        await asyncio.sleep(0.1)
+        return "async_ok"
+        
+    result = await async_works()
+    assert result == "async_ok"
+
+@pytest.mark.asyncio
+async def test_guard_async_fallback():
+    """Async fonksiyonlarda fallback mekanizmasının çalışması."""
+    @guard(max_retries=2, delay=0.1, fallback="async_default")
+    async def async_fails():
+        import asyncio
+        await asyncio.sleep(0.1)
+        raise ValueError("async_err")
+
+    result = await async_fails()
+    assert result == "async_default"
