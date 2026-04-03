@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "veridian-guard"
-version = "0.1.1"
+version = "0.2.2"
 description = "Lightweight guard layer for AI agents — retry, catch, log."
 readme = "README.md"
 license = "MIT"
@@ -15,7 +15,7 @@ dependencies = []
 dev = ["pytest", "build", "twine"]
 
 [project.urls]
-Homepage = "https://github.com/KULLANICI_ADIN/veridian"
+Homepage = "https://github.com/ozereray/veridian"
 
 [tool.setuptools.packages.find]
 include = ["veridian*"]
