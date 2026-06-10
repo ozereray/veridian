@@ -1,0 +1,23 @@
+# Python derleme dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Dağıtım ve paketleme
+dist/
+build/
+*.egg-info/
+
+# Sanal ortamlar (Virtual Environments)
+venv/
+.venv/
+venv_veridian/
+
+# Test ve Raporlama
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Gizli veriler ve loglar
+.env
+*.log
